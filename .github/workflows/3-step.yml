@@ -116,8 +116,8 @@ jobs:
           COMMENT_BODY: ${{ steps.build-message-step-results.outputs.updated-text }}
       
       - name: Fail job if not all checks passed
-          if: contains(steps.*.outcome, 'failure')
-          run: exit 1
+        if: contains(steps.*.outcome, 'failure')
+        run: exit 1
 
       - name: Build message - step finished
         id: build-message-step-finish
